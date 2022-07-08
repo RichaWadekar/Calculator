@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .container
+        {
+            width: 500px;
+            height: 550px;
+            background-image: url(https://www.freecodecamp.org/news/content/images/2021/06/w-qjCHPZbeXCQ-unsplash.jpg);
+            position: relative;
+            margin: 0 auto;
+            
+        }
+        .calculator{
+            margin: 0 auto;
+            position: relative;
+            top: 90px;
+            width: 300px;
+            padding-bottom: 15px;
+            border-radius: 7px;
+            background-color: black;
+            box-shadow: 5px 8px 8px -2px rgba(0, 0, 0, 0.61);
+
+        }
+        .display{
+            width: 100%;
+            height: 80px;
+            border: none;
+            box-sizing: border-box;
+            padding: 10px;
+            font-size: xx-large;
+            background-color: rgb(234, 232, 233);
+            color: black;
+            text-align: right;
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+
+        }
+        button{
+            text-align: center;
+            margin: 10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            font-size: x-large;
+            color: black;
+            background-color: palevioletred;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+        .op{
+            background-color: antiquewhite;
+            font-weight: bold;
+            color: black;
+        }
+        
+    </style>
+    <script>
+        function display(val)
+        {
+            document.getElementById("id1").value+=val;
+        }
+        function solve()
+        {
+            let x = document.getElementById("id1").value;
+            let y = eval(x);
+            document.getElementById("id1").value = y;
+        }
+        function clr()
+        {
+            document.getElementById("id1").value = "";
+        }
+
+    </script>
+</head>
+<body>
+    <div class="container">
+    <div class="calculator">
+    <input type="text" class="display" id="id1" disabled>
+   <div class="keys">
+       <div class="row">
+           <button value="7" onclick="display('7')">7</button>
+           <button value="8"  onclick="display('8')">8</button>
+           <button value="9"  onclick="display('9')">9</button>
+           <button class="op" value="+"  onclick="display('+')">+</button>
+       </div>
+       <div class="row">
+           <button value="4"  onclick="display('4')">4</button>
+           <button value="5"  onclick="display('5')">5</button>
+           <button value="6"  onclick="display('6')">6</button>
+           <button class="op" value="-"  onclick="display('-')">-</button>
+       </div>
+       <div class="row">
+           <button value="1"  onclick="display('1')">1</button>
+           <button value="2"  onclick="display('2')">2</button>
+           <button value="3"  onclick="display('3')">3</button>
+           <button class="op" value="*"  onclick="display('*')">*</button>
+       </div>
+       <div class="row">
+           <button class="op" value="C"  onclick="clr()">C</button>
+           <button value="0"  onclick="display('0')">0</button>
+           <button class="op" value="/"  onclick="display('/')">/</button>
+           <button class="op" value="="  onclick="solve()">=</button>
+       </div>
+   </div>
+   </div>
+   </div>
+    
+</body>
+</html>
